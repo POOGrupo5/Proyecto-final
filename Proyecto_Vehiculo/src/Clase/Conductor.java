@@ -1,10 +1,10 @@
 package Clase;
 
 public class Conductor {
-	private int areaLaboral;
+	private String areaLaboral;
 	private String nombre, dni;
 	
-	public Conductor(int areaLaboral, String nombre, String dni) {
+	public Conductor(String areaLaboral, String nombre, String dni) {
 
 		this.nombre = nombre;
 		this.areaLaboral = areaLaboral;
@@ -12,13 +12,19 @@ public class Conductor {
 		
 	}
 
-	public int getAreaLaboral() {
+	
+
+	public String getAreaLaboral() {
 		return areaLaboral;
 	}
 
-	public void setAreaLaboral(int areaLaboral) {
+
+
+	public void setAreaLaboral(String areaLaboral) {
 		this.areaLaboral = areaLaboral;
 	}
+
+
 
 	public String getNombre() {
 		return nombre;

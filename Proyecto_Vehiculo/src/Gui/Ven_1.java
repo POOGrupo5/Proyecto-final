@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Clase.Conductor;
+import Clase.Vehiculo;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -188,7 +192,9 @@ public class Ven_1 extends JFrame implements ActionListener {
 		}
 	}
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) { // Boton Registrar
-		
+		Conductor a = new Conductor( LeerAreaL(),LeerNombre(),LeerDni());
+		Vehiculo b = new Vehiculo(LeerPlaca(), LeerTipo());
+		Listado(a,b);
 		
 		
 	}
@@ -197,4 +203,20 @@ public class Ven_1 extends JFrame implements ActionListener {
 	String LeerDni() {return txtDni.getText();}
 	String LeerTipo() {return cmbTipo.getSelectedItem().toString();}
 	String LeerAreaL() {return cmbAreaL.getSelectedItem().toString();}
+	
+	
+	void  Imprimir(String s) {
+		txtS.append(s+"\n");
 	}
+	void Listado(Conductor a,Vehiculo b) {
+		Imprimir("Placa\tTipo\tNombren\tDni\tArea Laboral");
+		Imprimir(b.getPlaca()+"\t"+ b.getTipo()+"\t"+a.getNombre()+"\t"+a.getDni()+"\t"+a.getAreaLaboral());
+	}
+	
+	
+}
+
+
+
+
+

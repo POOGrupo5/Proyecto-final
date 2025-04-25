@@ -2,8 +2,8 @@ package Clase;
 
 public class Vehiculo {
 	private String placa;
-	private int  tipo;
-	public Vehiculo(String placa, int tipo) {
+	private String  tipo;
+	public Vehiculo(String placa, String tipo) {
 		
 		this.placa = placa;
 		this.tipo = tipo;
@@ -15,11 +15,12 @@ public class Vehiculo {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
-	public int getTipo() {
+	public String getTipo() {
 		return tipo;
 	}
-	public void setTipo(int tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
 	
 }
