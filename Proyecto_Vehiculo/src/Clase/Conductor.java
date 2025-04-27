@@ -42,6 +42,5 @@ public class Conductor {
 		this.dni = dni;
 	}
 	
-	// Comentario commit de prueba
 	// Comentario commit de prueba de Xiomara
 }
