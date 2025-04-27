@@ -12,6 +12,7 @@ import Clase.Vehiculo;
 
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -191,24 +192,31 @@ public class Ven_1 extends JFrame implements ActionListener {
 			do_btnNewButton_actionPerformed(e);
 		}
 	}
-	protected void do_btnNewButton_actionPerformed(ActionEvent e) { // Boton Registrar
-		Conductor a = new Conductor( LeerAreaL(),LeerNombre(),LeerDni());
-		Vehiculo b = new Vehiculo(LeerPlaca(), LeerTipo());
-		Listado(a,b);
-		
-		
+	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
+	    try {
+	        //Vehículo
+	        String placa = txtPlaca.getText().trim();
+	        String tipo = cmbTipo.getSelectedItem().toString();
+
+	        // Conductor
+	        String nombre = txtNombre.getText().trim();
+	        String dni = txtDni.getText().trim();
+	        String areaLaboral = cmbAreaL.getSelectedItem().toString();
+
+	        Vehiculo vehiculo = new Vehiculo(placa, tipo);
+	        Conductor conductor = new Conductor(areaLaboral, nombre, dni);
+	        Imprimir(conductor, vehiculo);
+
+	    } catch (Exception error) {
+	        JOptionPane.showMessageDialog(this, "Debe rellenar todos los datos para registrar");
+	    }
 	}
-	String LeerNombre() {return txtNombre.getText();}
-	String LeerPlaca() {return txtPlaca.getText();}
-	String LeerDni() {return txtDni.getText();}
-	String LeerTipo() {return cmbTipo.getSelectedItem().toString();}
-	String LeerAreaL() {return cmbAreaL.getSelectedItem().toString();}
 	
 	
 	void  Imprimir(String s) {
 		txtS.append(s+"\n");
 	}
-	void Listado(Conductor a,Vehiculo b) {
+	void Imprimir(Conductor a,Vehiculo b) {
 		Imprimir("Placa\tTipo\tNombren\tDni\tArea Laboral");
 		Imprimir(b.getPlaca()+"\t"+ b.getTipo()+"\t"+a.getNombre()+"\t"+a.getDni()+"\t"+a.getAreaLaboral());
 	}

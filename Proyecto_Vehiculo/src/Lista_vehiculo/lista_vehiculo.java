@@ -2,6 +2,7 @@ package Lista_vehiculo;
 
 import java.util.ArrayList;
 
+import Clase.Conductor;
 import Clase.Vehiculo;
 
 public class lista_vehiculo {
@@ -13,8 +14,4 @@ public class lista_vehiculo {
 	public int Tamaño() {
 		return vehi.size(); // size calcula cuantos objetos hay en la Arreglo_lista "vehi"
 	}
-	
-	
-	
-
 }

@@ -1,8 +1,7 @@
 package Clase;
 
 public class Conductor {
-	private String areaLaboral;
-	private String nombre, dni;
+	private String areaLaboral, nombre, dni;
 	
 	public Conductor(String areaLaboral, String nombre, String dni) {
 
@@ -42,5 +41,4 @@ public class Conductor {
 		this.dni = dni;
 	}
 	
-	// Comentario commit de prueba de Xiomara
 }
